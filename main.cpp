@@ -9,10 +9,7 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 #endif
-void blink_led1(DigitalOut &led, bool on)
-{
-    printf("LED blink");
-}
+
 int main()
 {
 #ifdef LED1
@@ -37,9 +34,5 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
-        if (led) {
-            blink_led1(led, true);
-        }
     }
-
 }
