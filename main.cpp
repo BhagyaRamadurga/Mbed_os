@@ -37,6 +37,8 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
-        
+        if led {
+            blink_led1(led);              // blink LED if it's on
+        }
     }
 }
