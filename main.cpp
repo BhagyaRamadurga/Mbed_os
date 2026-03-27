@@ -9,10 +9,7 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 #endif
-void blink_led1(DigitalOut &led)
-{
-    led = !led;
-}
+
 int main()
 {
 #ifdef LED1
@@ -37,10 +34,6 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
-        if blink_led1 is defined, blink the LED regardless of button state
-         {
-            blink_led1(led);
-            ThisThread::sleep_for(BLINKING_RATE);
-        }
+       
     }
 }
