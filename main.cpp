@@ -37,5 +37,10 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
+        if blink_led1 is defined, blink the LED regardless of button state
+         {
+            blink_led1(led);
+            ThisThread::sleep_for(BLINKING_RATE);
+        }
     }
 }
