@@ -9,7 +9,10 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 #endif
-
+void blink_led1(DigitalOut &led)
+{
+    led = !led; // toggle LED state
+}
 int main()
 {
 #ifdef LED1
