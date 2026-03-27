@@ -37,11 +37,6 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
-        if led == true {
-            blink_led1(led);
-            printf("LED is ON\n");
-        } else {
-            printf("LED is OFF\n");
-        }
+        
     }
 }
