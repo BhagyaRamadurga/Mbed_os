@@ -3,18 +3,15 @@
 #define BLINKING_RATE    500ms
 #define BUTTON_POLL_RATE 50ms
 
-#ifdef LED1
 void set_led1_state(DigitalOut &led, bool on)
 {
     led = on ? 1 : 0;
 }
 
-ifdef LED!
-void is_led1_on(DigitalOut &led, bool &on)
+bool is_led1_on(const DigitalOut &led)
 {
-    on = led.read() == 1;
+    return led.read() != 0;
 }
-#endif
 void blink_led1(DigitalOut &led)
 {
     led = !led; // toggle LED state
