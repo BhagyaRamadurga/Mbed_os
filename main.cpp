@@ -8,14 +8,7 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 
-bool is_led1_on(const DigitalOut &led)
-{
-    return led.read() != 0;
-}
-void blink_led1(DigitalOut &led)
-{
-    led = !led; // toggle LED state
-}
+
 int main()
 {
 #ifdef LED1
@@ -40,10 +33,6 @@ int main()
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #endif
-#ifdef LED1
-        if (is_led1_on(led)) {
-            blink_led1(led);              // blink LED if it's on
-        }
-#endif
+
     }
 }
