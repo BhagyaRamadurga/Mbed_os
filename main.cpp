@@ -8,12 +8,6 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 
-void update_led_from_button(DigitalOut &led, DigitalIn &button)
-{
-    const bool pressed = (button.read() == 0);
-    set_led1_state(led, pressed);
-}
-
 
 int main()
 {
@@ -30,7 +24,8 @@ int main()
 
     while (true) {
 #if defined(LED1) && defined(BUTTON1)
-        update_led_from_button(led, button);
+        bool pressed = (button.read() == 0);
+        set_led1_state(led, pressed);   // LED ON when button pressed
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #elif defined(LED1)
         led = !led;                     // fallback blink if no button
