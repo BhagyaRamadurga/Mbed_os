@@ -9,7 +9,11 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 
-
+ifdef LED!
+void is_led1_on(DigitalOut &led, bool &on)
+{
+    on = led.read() == 1;
+}
 #endif
 void blink_led1(DigitalOut &led)
 {
