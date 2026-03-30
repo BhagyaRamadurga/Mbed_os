@@ -8,7 +8,7 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 
-
+void bli
 int main()
 {
 #ifdef LED1
