@@ -38,6 +38,7 @@ int main()
 #endif
         if (led!=0) {
             blink_led1(led);
+            printf("LED1 is ON\n");
         }
 
     }
