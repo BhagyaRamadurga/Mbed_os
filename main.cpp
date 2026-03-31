@@ -15,6 +15,8 @@ void blink_led1(DigitalOut &led)
 
 int main()
 {
+    bool loop_started = false;
+
 #ifdef LED1
     DigitalOut led(LED1);
     bool previous_led_state = (led.read() != 0);
@@ -33,6 +35,11 @@ int main()
 #endif
 
     while (true) {
+        if (!loop_started) {
+            printf("Main loop started\n");
+            loop_started = true;
+        }
+
 #if defined(LED1) && defined(BUTTON1)
         bool pressed = (button.read() == 0);
         set_led1_state(led, pressed);   // LED ON when button pressed
