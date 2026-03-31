@@ -16,7 +16,7 @@ void blink_led1(DigitalOut &led)
 int main()
 {
     bool loop_started = false;
-    printf("Program started\n");
+    printf("Program started \n");
 
 #ifdef LED1
     DigitalOut led(LED1);
