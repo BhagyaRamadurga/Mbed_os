@@ -18,6 +18,11 @@ int main()
 #ifdef LED1
     DigitalOut led(LED1);
     bool previous_led_state = (led.read() != 0);
+    if (previous_led_state) {
+        printf("LED1 starts as ON\n");
+    } else {
+        printf("LED1 starts as OFF\n");
+    }
 #endif
 
 #ifdef BUTTON1
