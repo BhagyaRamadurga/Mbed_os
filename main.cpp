@@ -40,7 +40,10 @@ int main()
             printf("Main loop started\n");
             loop_started = true;
         }
-
+    
+    if (button_press_count > 0) {
+        printf("Total BUTTON1 presses: %lu\n", static_cast<unsigned long>(button_press_count));
+    }
 #if defined(LED1) && defined(BUTTON1)
         bool pressed = (button.read() == 0);
         set_led1_state(led, pressed);   // LED ON when button pressed
