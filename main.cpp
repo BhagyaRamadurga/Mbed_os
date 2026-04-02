@@ -8,10 +8,7 @@ void set_led1_state(DigitalOut &led, bool on)
     led = on ? 1 : 0;
 }
 
-void blink_led1(DigitalOut &led)
-{
-    led = !led; // toggle LED state
-}
+
 
 int main()
 {
@@ -57,7 +54,7 @@ int main()
 
         ThisThread::sleep_for(BUTTON_POLL_RATE);
 #elif defined(LED1)
-        blink_led1(led);
+       
         ThisThread::sleep_for(BLINKING_RATE);
 #else
         ThisThread::sleep_for(BUTTON_POLL_RATE);
